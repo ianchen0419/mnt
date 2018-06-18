@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Medical News Today Register</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<style type="text/css">
+		@charset "UTF-8";
+		* {
+		  font-family: Arial, 微軟正黑體;
+		  box-sizing: border-box;
+		  /*border: solid 1px;*/
+		  border-radius: 2px;
+		  -webkit-transition-duration: 0.5s;
+		          transition-duration: 0.5s;
+		}
+
+		html, body {
+		  padding: 0;
+		  margin: 0;
+		  text-align: center;
+		}
+
+		.container {
+		  width: 500px;
+		  margin-left: auto;
+		  margin-right: auto;
+		}
+
+		input {
+		  width: 300px;
+		  height: 30px;
+		  padding: 5px;
+		  font-size: 20px;
+		  display: inline-block;
+		  border: 1px solid #1165bd;
+		}
+
+		.left {
+		  display: inline-block;
+		}
+
+		#submit {
+		  background-color: #1165bd;
+		  color: #fff;
+		  height: 73px;
+		  width: 73px;
+		  vertical-align: top;
+		  margin-left: 30px;
+		  border: 1px solid #1165bd;
+		  font-size: 20px;
+		  display: inline-block;
+		  line-height: 70px;
+		  cursor: pointer;
+		  -webkit-user-select: none;
+	      -moz-user-select: none;
+	      -ms-user-select: none;
+	          user-select: none;
+		}
+
+		.indicator {
+		  width: 420px;
+		  height: 30px;
+		  display: inline-block;
+		  text-align: left;
+		  background-color: #eee;
+		}
+		.indicator div {
+		  height: 30px;
+		  display: inline-block;
+		  color: #fff;
+		  text-align: center;
+		  vertical-align: top;
+		  line-height: 32px;
+		}
+
+		.red {
+		  width: 140px;
+		  background-color: #db4f4f;
+		}
+
+		.yellow {
+		  width: 280px;
+		  background-color: #f1c232;
+		}
+
+		.green {
+		  width: 100%;
+		  background-color: #6aa84f;
+		}
+
+		.alerts {
+		  width: 420px;
+		  display: inline-block;
+		  text-align: left;
+		}
+
+		.email-alert, .password-alert {
+		  width: 350px;
+		  height: 30px;
+		  display: inline-block;
+		  text-align: left;
+		  line-height: 32px;
+		  padding-left: 5px;
+		  vertical-align: top;
+		  overflow: hidden;
+		  margin-right: 2px;
+		  margin-bottom: 10px;
+		  position: relative;
+		}
+
+		.password-alert {
+		  height: 60px;
+	 	  padding: 5px;
+	 	  line-height: 20px;
+		}
+ 
+
+		.email-alert i, .password-alert i {
+		  margin-right: 5px;
+		  font-size: 20px;
+		}
+		.email-alert .fa-exclamation-circle, .password-alert .fa-exclamation-circle {
+		  color: #db4f4f;
+		}
+		.email-alert .fa-check, .password-alert .fa-check {
+		  color: #6aa84f;
+		}
+
+		.invalid {
+		  border: 1px solid #db4f4f;
+		  color: #db4f4f;
+		  opacity: 1;
+		}
+
+		.valid {
+		  border: 1px solid #6aa84f;
+		  color: #6aa84f;
+		  opacity: 1;
+		}
+	
+		.wiggle {
+			animation: wiggle 0.3s;
+			-webkit-animation: wiggle 0.3s;
+			animation-fill-mode: both;
+		}
+
+		br {
+		  line-height: 36px;
+		}
+
+		@-webkit-keyframes wiggle {
+		  0% {
+		    left: -3px;
+		  }
+		  10% {
+		    left: 3px;
+		  }
+		  20% {
+		    left: -3px;
+		  }
+		  30% {
+		    left: 3px;
+		  }
+		  40% {
+		    left: -3px;
+		  }
+		  50% {
+		    left: 3px;
+		  }
+		  60% {
+		    left: -3px;
+		  }
+		  70% {
+		    left: 3px;
+		  }
+		  80% {
+		    left: -3px;
+		  }
+		  90% {
+		    left: 3px;
+		  }
+		  100% {
+		    left: 0;
+		  }
+		}
+
+		@keyframes wiggle {
+		  0% {
+		    left: -3px;
+		  }
+		  10% {
+		    left: 3px;
+		  }
+		  20% {
+		    left: -3px;
+		  }
+		  30% {
+		    left: 3px;
+		  }
+		  40% {
+		    left: -3px;
+		  }
+		  50% {
+		    left: 3px;
+		  }
+		  60% {
+		    left: -3px;
+		  }
+		  70% {
+		    left: 3px;
+		  }
+		  80% {
+		    left: -3px;
+		  }
+		  90% {
+		    left: 3px;
+		  }
+		  100% {
+		    left: 0;
+		  }
+		}
+
+
+</style>
+</head>
+<body>
+<br/><br/>
+<!-- form-->
+<form action="" method="POST">
+  <h1>Medical News Today Register</h1>
+  <div class="left">
+    <input type="text" placeholder="email"/><br/>
+    <input type="password" placeholder="password"/>
+  </div>
+  <input type="submit" id="submit"></input>
+</form><br/>
+<!-- indicator-->
+<div class="indicator">
+  <div></div>
+</div>
+<!--email notice--><br/>
+<div class="alerts">
+  <div class="email-alert"  data-fail="email-alert invalid" data-success="email-alert valid"><i data-fail="fa fa-exclamation-circle" data-success="fa fa-check"></i><span></span></div>
+  <div class="password-alert" data-fail="password-alert invalid" data-success="password-alert valid"><i data-fail="fa fa-exclamation-circle" data-success="fa fa-check"></i><span></span></div>
+</div>
+
+<script>
+	
+	const light=document.querySelectorAll(".indicator div")[0];
+
+	const email=document.querySelectorAll("input")[0];
+	const Ealert=document.querySelector(".email-alert");
+	const Emark=document.querySelectorAll(".email-alert i")[0];
+	const Etext=document.querySelectorAll(".email-alert span")[0];
+
+	const password=document.querySelectorAll("input")[1];
+	const Palert=document.querySelector(".password-alert");
+	const Pmark=document.querySelectorAll(".password-alert i")[0];
+	const Ptext=document.querySelectorAll(".password-alert span")[0];
+
+	const submit=document.querySelector("#submit");
+
+	var Echeck=false;
+	var Pcheck=false;
+
+
+
+	function showIdx(color, text){
+	 light.className=color;
+	 light.textContent=text;
+	}
+
+	//const eight=/[a-z]{8}/;
+	//const twelve=/[a-z]{12}/;
+	const num=/\d/;
+	const upper=/[A-Z]/;
+	const pun=/[.,\/#!$%\^&\*;:{}=\-_`~()]/;
+	//+means show 1 time
+
+	password.addEventListener("input", function(){
+	 var pv=password.value;
+	 if(
+	 pv.length>=12 &&   
+	 pv.match(num) &&
+	 pv.match(upper) &&
+	 pv.match(pun))
+	 {
+	  showIdx("green", "strong");
+	 }else if(
+	 pv.length>=8 &&
+	 pv.match(upper) &&
+	 pv.match(num))
+	 {
+	  showIdx("yellow", "acceptable");
+	 }else {
+	  showIdx("red", "weak");
+	 }
+	 
+	})
+
+
+	//email alert
+	function Ereturn(text, ALdata, MKdata, boo){
+ 
+	 Etext.textContent=text;
+	 Ealert.className=ALdata;
+	 Emark.className=MKdata;
+	 Echeck=boo;
+
+	}
+
+	const Eformat=/\w[+.-_‘]?@[-.]?\w/;
+
+	email.addEventListener("blur", function(){
+
+		var ev=email.value;
+		const ALfail=Ealert.dataset.fail;
+		const MKfail=Emark.dataset.fail;
+		const ALsuccess=Ealert.dataset.success;
+		const MKsuccess=Emark.dataset.success;
+
+		//if(email.value.match(Eformat) && email.value.length>0)
+
+	   	if(email.value.length==0){
+	   		
+	   		Ereturn("Email can't be empty", ALfail, MKfail, false)
+
+	   	}else if(!ev.match(Eformat)){
+
+	   		Ereturn("Invalid email", ALfail, MKfail, false)
+
+	   	}else {
+
+	   		//existing email check
+	   		$.ajax(
+			 {
+			  type: "POST",
+			  url: "MNT.php",
+			  data: {
+			  	//emailcheck is the name
+			  	emailcheck: email.value
+			  },
+			  success: function(res){
+			   if(res=="new"){
+
+			   	Ereturn("Valid email", ALsuccess, MKsuccess, true)
+			   	
+
+			   }else{
+
+			   	Ereturn("Registed email", ALfail, MKfail, false)
+
+			   }
+			  }
+			 }
+
+			 );
+	   	}	
+
+	})
+
+
+	//password alert
+
+	function Preturn(text, ALdata, MKdata, boo){
+ 
+	 Ptext.textContent=text;
+	 Palert.className=ALdata;
+	 Pmark.className=MKdata;
+	 Pcheck=boo;
+
+	}
+
+	const passnum=/\d?password\d?/;
+	const iloveU=/\d?iloveyou\d?/;
+	const def=/\d?default\d?/;
+	const qwe=/\d?qwerty\d?/;
+	const abc=/\d?abc\d?/;
+	const one2five=/\d?12345\d?/;
+
+	password.addEventListener("input", function(){
+	 const ALfail=Palert.dataset.fail;
+	 const MKfail=Pmark.dataset.fail;
+	 const ALsuccess=Palert.dataset.success;
+	 const MKsuccess=Pmark.dataset.success;
+	 var pv=password.value;
+	 
+	 if(pv.length==0){
+	  Preturn("Password can't be empty", ALfail, MKfail, false)
+	 }else if(pv==email.value){
+	  Preturn("Password can't be the same as email", ALfail, MKfail, false)
+	 }else if(pv.match(passnum)){
+	  Preturn("Password can't use 'password'", ALfail, MKfail, false)
+	 }else if(pv.match(iloveU)){
+	  Preturn("Password can't use 'iloveyou'", ALfail, MKfail, false)
+	 }else if(pv.match(def)){
+	  Preturn("Password can't use 'default'", ALfail, MKfail, false)
+	 }else if(pv.match(qwe)){
+	  Preturn("Password can't use 'qwerty'", ALfail, MKfail, false)
+	 }else if(pv.match(abc)){
+	  Preturn("Password can't use 'abc'", ALfail, MKfail, false)
+	 }else if(pv.match(one2five)){
+	  Preturn("Password can't use '12345'", ALfail, MKfail, false)
+	 }else if(light.className=="red"){
+	  Preturn("Password should be 8 characters, contains 1 upper case and 1 number", ALfail, MKfail, false)
+	 }else{
+	  Preturn("Valid password", ALsuccess, MKsuccess, true)
+	 }
+
+	})
+
+
+	//submit
+
+
+	submit.addEventListener("click", function(e){
+
+		Ealert.classList.remove("wiggle");
+		Palert.classList.remove("wiggle");
+
+
+		e.preventDefault();
+
+		if(Echeck==true && Pcheck==true){
+
+			Palert.style.opacity="0";
+
+			$.ajax({
+
+				type: "POST",
+				url: "MNTinsert.php",
+				data: {
+					emailvalue: email.value,
+					passwordvalue: password.value
+				},
+				success: function(re){
+
+					if(re=="success"){
+
+						Etext.textContent="Register success";
+						password.value="";
+						email.value="";
+
+					}else {
+
+						Etext.textContent="Register fail";
+						Emark.className=Emark.dataset.fail;
+						Ealert.className=Ealert.dataset.fail;
+
+					}
+				}
+
+			});
+
+
+
+		}else if(Echeck==false && Pcheck==true){
+			
+			email.value="";
+			Ealert.classList.add("wiggle");
+
+		}else if(Pcheck==false && Echeck==true){
+
+			password.value="";
+			Palert.classList.add("wiggle");
+
+		}else if(Echeck==false && Pcheck==false) {
+
+			email.value="";
+			password.value="";
+			Ealert.classList.add("wiggle");
+			Palert.classList.add("wiggle");
+		}
+
+	})
+
+
+</script>
+</body>
+</html>
